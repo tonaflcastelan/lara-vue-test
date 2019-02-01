@@ -1,23 +1,23 @@
 <template>
   <div>
     <h1>Crear Usuario</h1>
-    <ul>
-    <li v-for="error in errors">{{error}}</li>
-</ul>
     <form @submit.prevent="addUser">
       <div class="row">
         <div class="col-md-6">
           <div class="form-group">
             <label>Nombre:</label>
             <input type="text" class="form-control" v-model="user.name">
+            <span v-if="errors.name" :class="['label label-danger']">{{ errors.name[0] }}</span>
           </div>
           <div class="form-group">
             <label>E-mail:</label>
             <input type="text" class="form-control" v-model="user.email">
+            <span v-if="errors.email" :class="['label label-danger']">{{ errors.email[0] }}</span>
           </div>
           <div class="form-group">
             <label>Password:</label>
             <input type="password" class="form-control" v-model="user.password">
+            <span v-if="errors.password" :class="['label label-danger']">{{ errors.password[0] }}</span>
           </div>
           <div class="form-group">
             <label>Rol:</label>
@@ -25,6 +25,7 @@
             <option value="0" class="form-control">Selecciona un rol</option>
              <option v-for="role in roles" v-bind:value="role.id">{{ role.name }}</option>
              </select>
+             <span v-if="errors.role_id" :class="['label label-danger']">{{ errors.role_id[0] }}</span>
           </div>
           <div class="form-group">
             <label>Imagen:</label>

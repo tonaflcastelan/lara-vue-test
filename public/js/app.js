@@ -17198,8 +17198,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -17238,14 +17236,6 @@ var render = function() {
     _c("h1", [_vm._v("Crear Rol")]),
     _vm._v(" "),
     _c(
-      "ul",
-      _vm._l(_vm.errors, function(error) {
-        return _c("li", [_vm._v(_vm._s(error))])
-      }),
-      0
-    ),
-    _vm._v(" "),
-    _c(
       "form",
       {
         on: {
@@ -17281,7 +17271,13 @@ var render = function() {
                     _vm.$set(_vm.role, "name", $event.target.value)
                   }
                 }
-              })
+              }),
+              _vm._v(" "),
+              _vm.errors.name
+                ? _c("span", { class: ["label label-danger"] }, [
+                    _vm._v(_vm._s(_vm.errors.name[0]))
+                  ])
+                : _vm._e()
             ])
           ])
         ]),
@@ -17385,8 +17381,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
 	data: function data() {
@@ -17433,14 +17427,6 @@ var render = function() {
     _c("h1", [_vm._v("Editar Rol")]),
     _vm._v(" "),
     _c(
-      "ul",
-      _vm._l(_vm.errors, function(error) {
-        return _c("li", [_vm._v(_vm._s(error))])
-      }),
-      0
-    ),
-    _vm._v(" "),
-    _c(
       "form",
       {
         on: {
@@ -17476,7 +17462,13 @@ var render = function() {
                     _vm.$set(_vm.role, "name", $event.target.value)
                   }
                 }
-              })
+              }),
+              _vm._v(" "),
+              _vm.errors.name
+                ? _c("span", { class: ["label label-danger"] }, [
+                    _vm._v(_vm._s(_vm.errors.name[0]))
+                  ])
+                : _vm._e()
             ])
           ])
         ]),
@@ -17829,6 +17821,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -17918,14 +17911,6 @@ var render = function() {
     _c("h1", [_vm._v("Crear Usuario")]),
     _vm._v(" "),
     _c(
-      "ul",
-      _vm._l(_vm.errors, function(error) {
-        return _c("li", [_vm._v(_vm._s(error))])
-      }),
-      0
-    ),
-    _vm._v(" "),
-    _c(
       "form",
       {
         on: {
@@ -17961,7 +17946,13 @@ var render = function() {
                     _vm.$set(_vm.user, "name", $event.target.value)
                   }
                 }
-              })
+              }),
+              _vm._v(" "),
+              _vm.errors.name
+                ? _c("span", { class: ["label label-danger"] }, [
+                    _vm._v(_vm._s(_vm.errors.name[0]))
+                  ])
+                : _vm._e()
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "form-group" }, [
@@ -17987,7 +17978,13 @@ var render = function() {
                     _vm.$set(_vm.user, "email", $event.target.value)
                   }
                 }
-              })
+              }),
+              _vm._v(" "),
+              _vm.errors.email
+                ? _c("span", { class: ["label label-danger"] }, [
+                    _vm._v(_vm._s(_vm.errors.email[0]))
+                  ])
+                : _vm._e()
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "form-group" }, [
@@ -18013,7 +18010,13 @@ var render = function() {
                     _vm.$set(_vm.user, "password", $event.target.value)
                   }
                 }
-              })
+              }),
+              _vm._v(" "),
+              _vm.errors.password
+                ? _c("span", { class: ["label label-danger"] }, [
+                    _vm._v(_vm._s(_vm.errors.password[0]))
+                  ])
+                : _vm._e()
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "form-group" }, [
@@ -18064,7 +18067,13 @@ var render = function() {
                   })
                 ],
                 2
-              )
+              ),
+              _vm._v(" "),
+              _vm.errors.role_id
+                ? _c("span", { class: ["label label-danger"] }, [
+                    _vm._v(_vm._s(_vm.errors.role_id[0]))
+                  ])
+                : _vm._e()
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "form-group" }, [
@@ -18158,6 +18167,10 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
 //
 //
 //
@@ -18360,7 +18373,13 @@ var render = function() {
                     _vm.$set(_vm.user, "name", $event.target.value)
                   }
                 }
-              })
+              }),
+              _vm._v(" "),
+              _vm.errors.name
+                ? _c("span", { class: ["label label-danger"] }, [
+                    _vm._v(_vm._s(_vm.errors.name[0]))
+                  ])
+                : _vm._e()
             ])
           ])
         ]),
@@ -18390,7 +18409,13 @@ var render = function() {
                     _vm.$set(_vm.user, "email", $event.target.value)
                   }
                 }
-              })
+              }),
+              _vm._v(" "),
+              _vm.errors.email
+                ? _c("span", { class: ["label label-danger"] }, [
+                    _vm._v(_vm._s(_vm.errors.email[0]))
+                  ])
+                : _vm._e()
             ])
           ])
         ]),
@@ -18420,7 +18445,13 @@ var render = function() {
                     _vm.$set(_vm.user, "password", $event.target.value)
                   }
                 }
-              })
+              }),
+              _vm._v(" "),
+              _vm.errors.password
+                ? _c("span", { class: ["label label-danger"] }, [
+                    _vm._v(_vm._s(_vm.errors.password[0]))
+                  ])
+                : _vm._e()
             ])
           ])
         ]),
@@ -18475,7 +18506,13 @@ var render = function() {
                   })
                 ],
                 2
-              )
+              ),
+              _vm._v(" "),
+              _vm.errors.role_id
+                ? _c("span", { class: ["label label-danger"] }, [
+                    _vm._v(_vm._s(_vm.errors.role_id[0]))
+                  ])
+                : _vm._e()
             ])
           ])
         ]),

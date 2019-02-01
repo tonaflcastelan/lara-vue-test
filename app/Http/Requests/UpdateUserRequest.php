@@ -37,6 +37,7 @@ class UpdateUserRequest extends FormRequest
         return [
             'name.required'     => 'El nombre del usuario es requerido',
             'email.required'    => 'El email requerido',
+            'email.email'       => 'El email no es válido',
             'email.unique'      => 'Este email ya ha sido regisrado',
             'role_id.required'  => 'El rol es requerido',
         ];

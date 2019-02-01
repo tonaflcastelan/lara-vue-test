@@ -1,15 +1,13 @@
 <template>
 	<div>
 		<h1>Editar Rol</h1>
-		<ul>
-	        <li v-for="error in errors">{{error}}</li>
-	    </ul>
 		<form @submit.prevent="updateRole">
 			<div class="row">
 				<div class="col-md-6">
 					<div class="form-group">
 					<label>Nombre del rol:</label>
 					<input type="text" class="form-control" v-model="role.name">
+					<span v-if="errors.name" :class="['label label-danger']">{{ errors.name[0] }}</span>
 				</div>
 				</div>
 			</div>
