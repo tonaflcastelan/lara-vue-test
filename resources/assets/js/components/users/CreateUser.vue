@@ -1,6 +1,9 @@
 <template>
   <div>
     <h1>Crear Usuario</h1>
+    <ul>
+    <li v-for="error in errors">{{error}}</li>
+</ul>
     <form @submit.prevent="addUser">
       <div class="row">
         <div class="col-md-6">
@@ -43,7 +46,8 @@
         return {
           user:{},
           image: '',
-          roles:[]
+          roles:[],
+          errors: {}
         }
     },
     created() {
@@ -52,7 +56,7 @@
           console.log(response.data);
           this.roles = response.data;
         });
-      },
+    },
     methods: {
       onImageChange(e){
                 console.log(e.target.files[0]);
@@ -94,8 +98,15 @@
 
            this.axios.post(uri, formData, config).then((response) => {
               this.$router.push({name: 'users'});
-           }).catch((err) => {
-              console.log(err);
+           }).catch(error => {
+                if (error.response && error.response.status == 422) {
+                      this.errors = error.response.data;
+                      console.log(this.errors);
+                  }
+              
+                /*error => this.status = error.response.data.status;
+                console.log(error.response.data);
+                console.log(error.response.status);*/
             });
       }
     }

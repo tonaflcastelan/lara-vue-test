@@ -1,6 +1,9 @@
 <template>
   <div>
     <h1>Crear Rol</h1>
+    <ul>
+        <li v-for="error in errors">{{error}}</li>
+    </ul>
     <form @submit.prevent="addRole">
       <div class="row">
         <div class="col-md-6">
@@ -22,7 +25,8 @@
     export default {
         data(){
         return {
-          role:{}
+          role:{},
+          errors:{}
         }
     },
     methods: {
@@ -30,7 +34,12 @@
         let uri = 'http://localhost:8000/api/roles/create';
            this.axios.post(uri, this.role).then((response) => {
               this.$router.push({name: 'roles'});
-           });
+           }).catch(error => {
+                if (error.response && error.response.status == 422) {
+                      this.errors = error.response.data;
+                      console.log(this.errors);
+                  }
+              });
       }
     }
   }

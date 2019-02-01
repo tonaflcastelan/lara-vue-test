@@ -71,7 +71,7 @@ class UsersController extends Controller
         $user = User::find($id);
 
         if (!$user) {
-    		return response()->json(['error' => true, 'message' => 'Unable to find Ingredient with ID ' . $id], 400);
+    		return response()->json(['error' => true, 'message' => 'Usuario con ' . $id . ' no se encontró'], 400);
     	}
         $user->email 	= $request->email;
         $user->name 	= $request->name;
@@ -100,7 +100,7 @@ class UsersController extends Controller
     	$user = User::find($id);
 
     	if (!$user) {
-    		return response()->json(['error' => true, 'message' => 'Unable to find Ingredient with ID ' . $id], 400);
+    		return response()->json(['error' => true, 'message' => 'Usuario con ' . $id . ' no se encontró'], 400);
     	}
 
     	$user->delete();

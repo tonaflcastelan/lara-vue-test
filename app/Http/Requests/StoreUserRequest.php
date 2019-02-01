@@ -40,12 +40,13 @@ class StoreUserRequest extends FormRequest
             'email.required'    => 'El email requerido',
             'email.email'       => 'El email no es válido',
             'email.unique'      => 'Este email ya ha sido regisrado',
-            'role_id.email'     => 'El rol es requerido',
+            'role_id.required'  => 'El rol es requerido',
+            'password.required' => 'El password es requerido',
         ];
     }
 
     protected function failedValidation(Validator $validator)
     {
-        throw new HttpResponseException(response()->json($validator->messages(), 400));
+        throw new HttpResponseException(response()->json($validator->messages(), 422));
     }
 }

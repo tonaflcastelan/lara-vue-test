@@ -1,6 +1,9 @@
 <template>
 	<div>
 		<h1>Editar Usuario</h1>
+		<ul>
+		    <li v-for="error in errors">{{error}}</li>
+		</ul>
 		<form @submit.prevent="updateUser">
 			<div class="row">
 				<div class="col-md-6">
@@ -61,7 +64,8 @@
 		data() {
 			return {
 				user: {},
-				roles:[]
+				roles:[],
+				errors: {}
 			}
 		},
 		created() {
@@ -100,7 +104,16 @@
 				
 				this.axios.post(uri, formData, config).then((response) => {
 					this.$router.push({name: 'users'});
-				});
+				}).catch(error => {
+                if (error.response && error.response.status == 422) {
+                      this.errors = error.response.data;
+                      console.log(this.errors);
+                  }
+              
+                /*error => this.status = error.response.data.status;
+                console.log(error.response.data);
+                console.log(error.response.status);*/
+            	});
 			}
 		}
     }

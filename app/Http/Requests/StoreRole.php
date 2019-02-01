@@ -39,6 +39,6 @@ class StoreRole extends FormRequest
 
     protected function failedValidation(Validator $validator)
     {
-        throw new HttpResponseException(response()->json($validator->messages(), 400));
+        throw new HttpResponseException(response()->json($validator->messages(), 422));
     }
 }

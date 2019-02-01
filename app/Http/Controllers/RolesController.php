@@ -38,7 +38,7 @@ class RolesController extends Controller
     	$role = Role::find($id);
 
     	if (!$role) {
-    		return response()->json(['error' => true, 'message' => 'Unable to find Ingredient with ID ' . $id], 400);
+    		return response()->json(['error' => true, 'message' => 'Usuario con ' . $id . ' no se encontró'], 400);
     	}
 
     	$role->delete();
@@ -56,7 +56,7 @@ class RolesController extends Controller
         $role = Role::find($id);
 
         if (!$role) {
-            return response()->json(['error' => true, 'message' => 'Unable to find Ingredient with ID ' . $id], 400);
+            return response()->json(['error' => true, 'message' => 'Usuario con ' . $id . ' no se encontró'], 400);
         }
         return response()->json($role);
     }
@@ -73,7 +73,7 @@ class RolesController extends Controller
         $role = Role::find($id);
 
         if (!$role) {
-    		return response()->json(['error' => true, 'message' => 'Unable to find Ingredient with ID ' . $id], 400);
+    		return response()->json(['error' => true, 'message' => 'Usuario con ' . $id . ' no se encontró'], 400);
     	}
 
         $role->update($request->all());
